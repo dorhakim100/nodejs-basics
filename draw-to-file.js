@@ -1,13 +1,13 @@
 import fs from 'fs'
 // import { utilService } from './services/util.service.js'
 
-// drawSquareToFile()
+drawSquareToFile()
 
 function drawToFile(str) {
   return new Promise((resolve, reject) => {
     fs.writeFile('data/pic.txt', str, 'utf8', (err, contents) => {
       if (err) {
-        console.log('Cannot read file')
+        console.log('Cannot write file')
 
         return reject()
       }
