@@ -1,5 +1,6 @@
 import fs from 'fs'
 import fr from 'follow-redirects'
+
 const { http, https } = fr
 
 export const utilService = {
@@ -18,6 +19,7 @@ function readJsonFile(path) {
 function download(url, fileName) {
   return new Promise((resolve, reject) => {
     const file = fs.createWriteStream(fileName)
+    console.log(url)
     https.get(url, (content) => {
       content.pipe(file)
       file.on('error', reject)
